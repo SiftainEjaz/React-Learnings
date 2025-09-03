@@ -1,6 +1,7 @@
 import react from 'react';
 
-function Card() {
+function Card({username,designation="Software Engineer"}) {
+
     return (
         <>
             <section className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8 rounded-xl">
@@ -26,11 +27,11 @@ function Card() {
                                 className="mx-auto size-10 rounded-full"
                             />
                             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                                <div className="font-semibold text-white">Judith Black</div>
+                                <div className="font-semibold text-white">{username}</div>
                                 <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-white">
                                     <circle r={1} cx={1} cy={1} />
                                 </svg>
-                                <div className="text-gray-400">CEO of Workcation</div>
+                                <div className="text-gray-400">{designation}</div>
                             </div>
                         </figcaption>
                     </figure>
