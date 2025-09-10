@@ -5,37 +5,37 @@ import App from './App.jsx'
 function MyApp(){
     return (
         <>
-            <h1>Custom MyApp !</h1>
+            
+            <a href='https://google.com' target='_blank'>Click me</a>
         </>
     )
 }
 
-// const ReactElement = {
-//     type: 'a',
-//     props: {
-//         href : "http://google.com",
-//         target : "_link"
+// const reactElement = {
+//     type : 'a',
+//     props : {
+//         href : "https://google.com",
+//         target : "_blank"
 //     },
-//     children : "Click to open Google"
+//     children : "Visit Google"
 // }
 
-const user = "Siftain Ejaz";
+const name1 = "Siftain Ejaz ";
+
+const element = (
+    <a href='https://google.com' target='_blank'>Click to Visit Google</a>
+)
 
 const reactElement = React.createElement(
     'a',
     {
-        href : 'http://google.com',
+        href : 'https://google.com' ,
         target : '_blank'
     },
-    'Click to Open Google ',
-    user
-)
-
-const anotherElement = (
-    <a href='http://google.com' target='_Blank'>Open Google</a>
+    "Visit here ",
+    name1
 )
 
 createRoot(document.getElementById('root')).render(
-  
     reactElement
 )

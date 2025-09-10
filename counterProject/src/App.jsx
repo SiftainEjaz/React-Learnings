@@ -2,35 +2,38 @@ import {useState} from 'react';
 import './App.css';
 
 function App() {
-  //const [variable , setVarName (method that will control the value of variable)] = 
-  // useState(DefaultValue of Variable)
 
-  let [counter, setCounter] = useState(15);
+  // let counter = 15;
+  const [counter, setCounter] = useState(15);
 
-  const increaseValue = () =>{
-    setCounter(++counter);
-    console.log("Value increased " + counter)
-  }
-  const decreaseValue = () =>{
-    setCounter( () => {
-      if(counter==0)
+  function increaseCounter(){
+    setCounter((prevCounter) => {
+      if(prevCounter==25)
       {
-        alert(`Counter has reached the lowest value : ${counter}`);
-        return counter;
+        alert(`Counter has reached its max value : ${prevCounter}`)
+        return prevCounter;
       }
-      else
-        return --counter;
+      else{
+        prevCounter+=1;
+        return prevCounter;
+      }
     });
+    console.log("Value increased" ,counter);
+  }
+
+  function decreaseCounter(){
+    setCounter(counter-1);
+    console.log("Value decreased" , counter);
   }
 
   return (
     <>
-      <h1>Chai aur React</h1>
-      <h2>Counter Value : {counter} </h2>
-      <button onClick={increaseValue} >Increase Value {counter}</button> 
+      <h1>Hello</h1>
+      <h2>Counter Value : {counter}</h2>
+      <button onClick={increaseCounter}>Increase Value : {counter}</button>
       <br />
-      <button onClick={decreaseValue} >Decrease value {counter}</button>
-      <p> Footer : {counter}</p>
+      <button onClick={decreaseCounter}>Decrease Value : {counter}</button>
+      <p>Footer : {counter}</p>
     </>
   )
 }

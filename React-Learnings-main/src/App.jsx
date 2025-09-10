@@ -1,7 +1,7 @@
 import Test from './test.jsx'
 
 function App() {
-  const user = 'Siftain Ejaz';
+  const user  = "Siftain";
 
   return (
     <>
