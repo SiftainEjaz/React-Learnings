@@ -7,17 +7,10 @@ function App() {
   const [counter, setCounter] = useState(15);
 
   function increaseCounter(){
-    setCounter((prevCounter) => {
-      if(prevCounter==25)
-      {
-        alert(`Counter has reached its max value : ${prevCounter}`)
-        return prevCounter;
-      }
-      else{
-        prevCounter+=1;
-        return prevCounter;
-      }
-    });
+    setCounter(counter+1);
+    setCounter(counter+1);
+    setCounter(counter+1);
+    setCounter(counter+1);
     console.log("Value increased" ,counter);
   }
 
