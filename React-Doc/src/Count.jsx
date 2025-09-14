@@ -3,14 +3,24 @@ import { useState,useEffect,useRef } from 'react';
 
 function Count() {
 
-    // const [counter,setCounter] = useState(0);
+    const [counter,setCounter] = useState(0);
 
-    const ref = useRef(0);
-    console.log(ref);
+    // const ref = useRef(0);
+    // console.log(ref);
 
     useEffect(()=>{
-            console.log("Count Component Rendered");
-        });
+            console.log("Count Component rendered");
+            console.log("Current State: ",counter);
+        },[counter]);
+
+    const handleClick = () => {
+
+        setCounter(c=>c+1);
+        setCounter(c=>c+1);
+        setCounter(c=>c+1);
+
+        console.log("Previous State: ",counter);
+    }
 
     return (
 
@@ -38,11 +48,16 @@ function Count() {
             }} 
             >+3</button> */}
 
+            <button onClick={handleClick}>Add: {counter}</button>
+
             {/* <p>Count: {counter}</p> */}
-            <button onClick={()=>{
+
+            {/* <button onClick={()=>{
                 ref.current = ref.current + 1;
                 console.log(ref.current);
-            }}>Add</button>
+            }}>Add</button> */}
+
+
 
 
         </>
