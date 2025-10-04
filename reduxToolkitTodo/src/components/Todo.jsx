@@ -9,7 +9,7 @@ function Todo() {
 
   return (
     <>
-      <div>Todos</div>
+      <div className='bg-amber-70 4xl'>Todos</div>
     <ul className="list-none">
         {todos.map((todo) => (
           <li
